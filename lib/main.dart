@@ -12,83 +12,35 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+          primarySwatch: Colors.blue,
         ),
-        home: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Stack(
-              alignment: AlignmentDirectional.center,
-              children: [
-                Container(
-                  height: 200,
-                  width: 200,
-                  color: Colors.deepPurple,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.deepOrange,
-                ),
-              ],
-            ),
-            Stack(
-              alignment: AlignmentDirectional.center,
-              children: [
-                Container(
-                  height: 200,
-                  width: 200,
-                  color: Colors.indigoAccent,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.deepOrange,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  height: 50,
-                  width: 50,
-                  color: Colors.cyan,
-                ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  color: Colors.pinkAccent,
-                ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  color: Colors.deepOrange,
-                ),
-              ],
-            ),
-            Container(
-              color: Colors.amber,
-              height: 30,
-              width: 300,
-              child: Text(
-                'Diamanete Amarelo',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 28,
-                ),
-                textAlign: TextAlign.center,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text('Tarefas'),
+          ),
+          body: Container(
+            child: Stack(children: [
+              Container(
+                color: Colors.blue,
+                height: 140,
               ),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  print('Você apertou o botão');
-                },
-                child: Text('Aperte-me'))
-          ],
+              Container(
+                  color: Colors.white,
+                  height: 100,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(color: Colors.black26, width: 72, height: 100),
+                      Text('Aprender Flutter'),
+                      ElevatedButton(
+                          onPressed: () {}, child: Icon(Icons.arrow_drop_up))
+                    ],
+                  ))
+            ]),
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+          ),
         ));
   }
 }
