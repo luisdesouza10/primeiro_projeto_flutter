@@ -69,7 +69,25 @@ class MyApp extends StatelessWidget {
                   color: Colors.deepOrange,
                 ),
               ],
-            )
+            ),
+            Container(
+              color: Colors.amber,
+              height: 30,
+              width: 300,
+              child: Text(
+                'Diamanete Amarelo',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 28,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  print('Você apertou o botão');
+                },
+                child: Text('Aperte-me'))
           ],
         ));
   }
