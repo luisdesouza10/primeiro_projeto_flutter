@@ -18,12 +18,40 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Tarefas'),
           ),
-          body: Container(
-            child: Stack(children: [
-              Container(
-                color: Colors.blue,
-                height: 140,
-              ),
+          body: ListView(children: [
+            Task('Aprender Flutter'),
+            Task('Estudar'),
+            Task('Caminhar'),
+            Task('Caminhar'),
+            Task('Caminhar'),
+            Task('Caminhar'),
+            Task('Caminhar'),
+            Task('Caminhar'),
+            Task('Caminhar'),
+          ]),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+          ),
+        ));
+  }
+}
+
+class Task extends StatelessWidget {
+  final String nome;
+  const Task(this.nome, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: Stack(children: [
+          Container(
+            color: Colors.blue,
+            height: 140,
+          ),
+          Column(
+            children: [
               Container(
                   color: Colors.white,
                   height: 100,
@@ -31,16 +59,28 @@ class MyApp extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(color: Colors.black26, width: 72, height: 100),
-                      Text('Aprender Flutter'),
+                      Container(
+                        width: 200,
+                        child: Text(
+                          nome,
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
                       ElevatedButton(
                           onPressed: () {}, child: Icon(Icons.arrow_drop_up))
                     ],
-                  ))
-            ]),
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {},
-          ),
-        ));
+                  )),
+              Text(
+                'Nível: 0',
+                style: TextStyle(color: Colors.white),
+              )
+            ],
+          )
+        ]),
+      ),
+    );
   }
 }
